@@ -1,1 +1,46 @@
-Hello World
+<body id="page-body">
+	<div id="link-div">
+		<center>Join Etch: <a id="chatLink" href="etchapp://join?r=Etch_World">Etch_World</a></center>
+	</div>
+	<div id="no-link-div">
+		<center>
+			<h1>Oops.</h1>
+			<p>This page is only accessible from an android device.</p>
+			<p>Which makes this awkward... You should <a href="http://etchr.me">leave</a>.</p>
+		</center>
+	</div>
+</body>
+
+<script type="text/javascript">
+	function getParameterByName(name) {
+	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	    	results = regex.exec(location.search);
+	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+	
+	function isAndroid(){
+		var ua = navigator.userAgent.toLowerCase();
+		return ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+	}
+	
+	if (isAndroid()) {
+		var noLinkDiv = document.getElementById('no-link-div');
+		noLinkDiv.innerHTML = "";
+		
+		var room = getParameterByName('r');
+		if (room=="") { room = "Etch_World"; }
+		var appURL = "etchapp://join?r=" + room;
+		
+		var chatLink = document.getElementById('chatLink');
+		chatLink.setAttribute('href', appURL);
+		chatLink.innerHTML = room;
+		
+		window.location.replace("http://etchr.me/join?");
+	}
+	else {
+		var linkDiv = document.getElementById('link-div');
+		linkDiv.innerHTML = "";
+	}
+
+</script>

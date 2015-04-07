@@ -11,6 +11,7 @@
 	</div>
 </body>
 
+
 <script type="text/javascript">
 	function getParameterByName(name) {
 	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -36,7 +37,7 @@
 		chatLink.setAttribute('href', appURL);
 		chatLink.innerHTML = room;
 		
-		window.location.replace("http://etchr.me/join?");
+		window.location.replace(appURL);
 	}
 	else {
 		var linkDiv = document.getElementById('link-div');

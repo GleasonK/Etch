@@ -1,12 +1,16 @@
 <body id="page-body">
 	<div id="link-div">
-		<center>Join Etch: <a id="chatLink" href="etchapp://join?r=Etch_World">Etch_World</a></center>
+		<center>
+			<p>Join Etch: <a id="chatLink" href="etchapp://join?r=Etch_World">Etch_World</a></p>
+			<p>Don't have Etch? <a href="http://play.google.com/store/apps/details?id=me.etch.etchapp">Download Now</a>!</p>
+		</center>
 	</div>
 	<div id="no-link-div">
 		<center>
 			<h1>Oops.</h1>
 			<p>This page is only accessible from an android device.</p>
 			<p>Which makes this awkward... You should <a href="http://etchr.me">leave</a>.</p>
+			<p>Better yet, ease the tension, <a href="http://play.google.com/store/apps/details?id=me.etch.etchapp">download Etch</a>.</p>
 		</center>
 	</div>
 </body>
@@ -37,7 +41,7 @@
 		chatLink.setAttribute('href', appURL);
 		chatLink.innerHTML = room;
 		
-		//window.location.replace(appURL);
+		window.location.replace(appURL);
 	}
 	else {
 		var linkDiv = document.getElementById('link-div');

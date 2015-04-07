@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <!--Menu-->
+    <LinearLayout
+        android:id="@+id/etch_menu"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:background="#ffcfd0d0">
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/etch_color_button"
+                android:background="@drawable/rounded_menu_bg"
+                style="@style/EtchMenuButton"
+                android:onClick="dispatchColor"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:text="E"
+                android:paddingBottom="0dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/etch_clear_button"
+                android:onClick="clearCanvas"
+                android:background="@drawable/rounded_menu_bg"
+                android:src="@drawable/ic_action_discard"
+                style="@style/EtchMenuButton"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/etch_game_button"
+                android:background="@drawable/rounded_menu_bg"
+                android:src="@drawable/ic_action_gamepad"
+                android:onClick="dispatchGame"
+                style="@style/EtchMenuButton"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <!--<Button-->
+            <!--android:id="@+id/etch_time_button"-->
+            <!--android:background="@drawable/rounded_menu_bg"-->
+            <!--style="@style/EtchMenuButton"-->
+            <!--android:text="T"/>-->
+            <Spinner
+                android:id="@+id/times_spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+        </RelativeLayout>
+    </LinearLayout>
+
+   <!--UI Buttons-->
+    <me.etch.etchapp.views.DrawingView
+        android:id="@+id/drawing"
+        android:layout_below="@id/etch_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#000"/>
+
+    <!--Color Pallete-->
+
+
+</RelativeLayout>

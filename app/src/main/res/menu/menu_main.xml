@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/action_chat_room" android:title="@string/action_chat_room"
+        android:orderInCategory="1" android:showAsAction="always"
+        android:icon="@drawable/ic_action_chat"/>
+    <item android:id="@+id/action_invite_friend" android:title="@string/action_invite_friend"
+        android:orderInCategory="2" android:showAsAction="always"
+        android:icon="@drawable/ic_action_add_person"/>
+    <item android:id="@+id/action_join_group" android:title="@string/action_join_group"
+        android:orderInCategory="3" android:showAsAction="always"
+        android:icon="@drawable/ic_action_group"/>
+</menu>
